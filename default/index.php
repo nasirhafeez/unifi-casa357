@@ -26,76 +26,81 @@ if ($result->num_rows >= 1) {
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>
-    <?php echo htmlspecialchars($business_name); ?> WiFi</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <link rel="stylesheet" href="../assets/styles/bulma.min.css" />
-  <link rel="stylesheet" href="../vendor/fortawesome/font-awesome/css/all.css" />
-  <link rel="icon" type="image/png" href="../assets/images/favicomatic/favicon-32x32.png" sizes="32x32" />
-  <link rel="icon" type="image/png" href="../assets/images/favicomatic/favicon-16x16.png" sizes="16x16" />
-  <link rel="stylesheet" href="../assets/styles/style.css" />
+    <meta charset="utf-8">
+    <title>
+      <?php echo htmlspecialchars($business_name); ?> WiFi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../assets/styles/bulma.min.css"/>
+    <link rel="stylesheet" href="../vendor/fortawesome/font-awesome/css/all.css"/>
+    <link rel="icon" type="image/png" href="../assets/images/favicomatic/favicon.png"/>
+    <link rel="stylesheet" href="../assets/styles/style.css"/>
 </head>
 
 <body>
-  <div class="page">
+<div class="page">
 
     <div class="head">
-      <br>
-      <figure id="logo">
-        <img src="../assets/images/logo.png">
-      </figure>
+        <br>
+        <figure id="logo">
+            <img src="../assets/images/logo.png">
+        </figure>
     </div>
 
     <div class="main">
-      <section class="section">
-        <div class="container">
-          <div id="login" class="content is-size-5 has-text-centered has-text-weight-bold">Enter your details</div>
-          <form method="post" action="connect.php">
-            <div class="field">
-                <div class="control has-icons-left">
-                    <input class="input" type="text" id="form_font" name="fname" placeholder="First Name" required>
-                    <span class="icon is-small is-left">
-                        <i class="fas fa-user"></i>
-                    </span>
-                </div>
-            </div>
+        <section class="section">
+            <div class="container">
+                <div id="login" class="content is-size-6 has-text-centered">Welkom bij de gratis WiFi</div>
+                <div id="login" class="content is-size-6 has-text-centered">van Casa357</div>
+                <br>
+                <form method="post" action="connect.php">
+                    <div class="field">
+                        <div class="control has-icons-left">
+                            <input class="input" type="text" name="fname" placeholder="Voornaam" required>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-user"></i>
+                            </span>
+                        </div>
+                    </div>
 
-            <div class="field">
-              <div class="control has-icons-left">
-                  <input class="input" type="text" id="form_font" name="lname" placeholder="Last Name" required>
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-user"></i>
-                </span>
-              </div>
-            </div>
+                    <div class="field">
+                        <div class="control has-icons-left">
+                            <input class="input" type="text" name="lname" placeholder="Achternaam" required>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-user"></i>
+                            </span>
+                        </div>
+                    </div>
 
-            <div class="field">
-                <div class="control has-icons-left">
-                    <input class="input" type="email" id="form_font" name="email" placeholder="Email" required>
-                    <span class="icon is-small is-left">
-                        <i class="fas fa-envelope"></i>
-                    </span>
+                    <div class="field">
+                        <div class="control has-icons-left">
+                            <input class="input" type="tel" name="phone" placeholder="Mobiel" required>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-mobile"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="control has-icons-left">
+                            <input class="input" type="email" name="email" placeholder="Email" required>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="buttons is-centered">
+                        <button class="button is-link">OK en gratis internet</button>
+                    </div>
+                </form>
+                <br>
+                <div id="login" class="content is-size-7 has-text-centered">
+                    Bij het doorgaan accepteert u de <a href="policy.php">algemene voorwaarden</a> van Casa357
                 </div>
             </div>
             <br>
-            <div class="columns is-centered is-mobile">
-                <div class="control">
-                    <label class="checkbox">
-                        <input type="checkbox" required>
-                        I agree to the <a href="policy.php">Terms of Use</a>
-                    </label>
-                </div>
-            </div>
-            <br>
-            <div class="buttons is-centered">
-                <button class="button is-link">Connect</button>
-            </div>
-          </form>
-        </div>
-        <br>
-      </section>
+        </section>
     </div>
-  </div>
+</div>
 </body>
 </html>
