@@ -22,6 +22,11 @@ foreach ($items as $item) {
     foreach ($collection as $referenced_item) {
       print "Referenced item: ".$referenced_item->title;
       echo "<br>";
+    } elseif (gettype($collection) == "array") {
+      print_r($collection);
+      echo "<br>";
+    } else {
+      print $collection . "<br>";
     }
   }
 }
