@@ -12,6 +12,8 @@ Podio::authenticate_with_app($app_id, $app_token);
 $items = PodioItem::filter($app_id);
 
 foreach ($items as $item) {
+  print $item->item_id;
+  echo "<br>";
   foreach ($item->fields as $field) {
     print "This field has the external_id: ".$field->external_id;
     echo "<br>";
@@ -20,8 +22,6 @@ foreach ($items as $item) {
     if (gettype($collection) == "object")
     foreach ($collection as $referenced_item) {
       print "Referenced item: ".$referenced_item->title;
-      echo "<br>";
-      print $field->item_id;
       echo "<br>";
     } elseif (gettype($collection) == "array") {
       print $field->humanized_value();
