@@ -21,19 +21,9 @@ Podio::authenticate_with_app($app_id, $app_token);
 //  }
 //}
 
-$fields = new PodioItemFieldCollection(array(
-  new PodioAppItemField(array("external_id" => "user", "values" => "250138701")),
-  new PodioAppItemField(array("external_id" => "location", "values" => "250139336")),
-  new PodioDateItemField(array("external_id" => "login-time", "values" => array(
-    "start" => "2011-12-31 11:27:10"
-  ))),
-  new PodioTextItemField(array("external_id" => "mac-address", "values" => "12:e5:10:47:b9:72"))
-));
-
-$item = new PodioItem(array(
-  'app' => new PodioApp($app_id), // Attach to app with app_id=123
-  'fields' => $fields
-));
-
-// Save the new item
+$item = new PodioItem();
+$item->fields['app-reference']->values = array('user' => 250138701);
+$item->fields['app-reference']->values = array('location' => 250138701);
+$item->fields['date']->start = "2011-12-31 11:27:10";
+$item->fields['text']->values = '12:e5:10:47:b9:72';
 $item->save();
