@@ -63,7 +63,7 @@ $fields = new PodioItemFieldCollection(array(
     'value' => "abc@xyz.com"
   ))),
   new PodioAppItemField(array("external_id" => "	relationship-2", "values" => array(
-    'item_id' => "2416065958"
+    'item_id' => 2416065958
   ))),
 ));
 
