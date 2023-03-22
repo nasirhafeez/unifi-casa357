@@ -74,8 +74,8 @@ $auth_result = $unifi_connection->authorize_guest($mac, $duration, null, null, n
 
    <div class="main">
        <seection class="section">
-           <div id="margin_zero" class="content has-text-centered is-size-6">Thanks, you are now </div>
-           <div id="margin_zero" class="content has-text-centered is-size-6">authorized on WiFi</div>
+           <div id="margin_zero" class="content has-text-centered is-size-6">Dankjewel. Je hebt </div>
+           <div id="margin_zero" class="content has-text-centered is-size-6">nu gratis WiFi.</div>
        </seection>
     </div>
 
