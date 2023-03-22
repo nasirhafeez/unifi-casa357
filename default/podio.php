@@ -23,7 +23,7 @@ foreach ($items as $item) {
       print "Referenced item: ".$referenced_item->title;
       echo "<br>";
     } elseif (gettype($collection) == "array") {
-      print $item->fields['date']->start;
+      print_r($collection);
       echo "<br>";
     } else {
       print $collection . "<br>";
