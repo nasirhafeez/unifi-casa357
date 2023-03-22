@@ -23,7 +23,7 @@ foreach ($items as $item) {
       print "Referenced item: ".$referenced_item->title;
       echo "<br>";
     } elseif (gettype($collection) == "array") {
-      print_r($collection);
+      print $collection->start;
       echo "<br>";
     } else {
       print $collection . "<br>";
