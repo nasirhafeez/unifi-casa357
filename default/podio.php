@@ -11,12 +11,9 @@ Podio::setup($client_id, $client_secret);
 Podio::authenticate_with_app($app_id, $app_token);
 $items = PodioItem::filter($app_id);
 
-foreach ($items as $item) {
-  print_r($item->properties());
-
-// See relationships to other types of objects
-//  print_r($item->relationships());
-}
+print "The collection contains ".count($items)." items";
+print "There are ".$items->total." items in the app in total";
+print "There are ".$items->filtered." items with the current filter applied";
 
 //$item = new PodioItem();
 //$item->fields['app-reference']->values = array('user' => 250138701);
