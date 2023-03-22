@@ -10,9 +10,8 @@ $app_token = $_SERVER['APP_TOKEN'];
 Podio::setup($client_id, $client_secret);
 Podio::authenticate_with_app($app_id, $app_token);
 $items = PodioItem::filter($app_id);
-
+$field_id = 'text';
 //print "My app has " . count($items) . " items";
 foreach ($items as $item) {
-  $data = $item->as_json();
-  $json_string = json_encode($data, JSON_PRETTY_PRINT);
+  print $item->fields[$field_id]->values;
 }
