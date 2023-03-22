@@ -10,11 +10,11 @@ $app_token = $_SERVER['APP_TOKEN'];
 Podio::setup($client_id, $client_secret);
 Podio::authenticate_with_app($app_id, $app_token);
 $items = PodioItem::filter($app_id);
-$field_id = 'app-reference';
-//print "My app has " . count($items) . " items";
+
 foreach ($items as $item) {
-  $collection = $item->fields[$field_id]->values;
-  foreach ($collection as $referenced_item) {
-    print "Referenced item: ".$referenced_item->title;
+  foreach ($item->fields as $field) {
+    // You can now work on each individual field object:
+    print "This field has the id: ".$field->field_id;
+    print "This field has the external_id: ".$field->external_id;
   }
 }
