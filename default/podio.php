@@ -24,7 +24,7 @@ foreach ($items as $item) {
       echo "<br>";
     } elseif (gettype($collection) == "array") {
 //      print_r($collection);
-      print $field->start->values;
+      print $field->start->humanized_value();
       echo "<br>";
     } else {
       print $collection . "<br>";
