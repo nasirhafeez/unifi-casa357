@@ -14,7 +14,7 @@ $items = PodioItem::filter($app_id);
 foreach ($items as $item) {
   foreach ($item->fields as $field) {
     // You can now work on each individual field object:
-    print "This field has the id: ".$field->field_id;
+    print "This field has the id: ".$field->field_id . '\n';
     print "This field has the external_id: ".$field->external_id;
   }
 }
