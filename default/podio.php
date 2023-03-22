@@ -11,7 +11,7 @@ Podio::setup($client_id, $client_secret);
 Podio::authenticate_with_app($app_id, $app_token);
 $items = PodioItem::filter($app_id);
 
-print "My app has " . count($items) . " items";
+//print "My app has " . count($items) . " items";
 foreach ($items as $item) {
   print $item->title;
 }
