@@ -12,9 +12,7 @@ Podio::authenticate_with_app($app_id, $app_token);
 $items = PodioItem::filter($app_id);
 
 foreach ($items as $item) {
-  $field_id = 'text';
-
-  print $item->fields[$field_id]->values;
+  print "id: ".$item->external_id;
 }
 
 //$item = new PodioItem();
