@@ -18,6 +18,7 @@ foreach ($items as $item) {
 
     $collection = $field->values;
     echo gettype($collection) . "<br>";
+    if (gettype($collection) == "object")
     foreach ($collection as $referenced_item) {
       print "Referenced item: ".$referenced_item->title;
       echo "<br>";
