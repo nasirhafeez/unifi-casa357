@@ -13,5 +13,5 @@ $items = PodioItem::filter($app_id);
 
 //print "My app has " . count($items) . " items";
 foreach ($items as $item) {
-  print_r($item);
+  print $item->properties();
 }
