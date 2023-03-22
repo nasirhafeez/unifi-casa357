@@ -11,21 +11,11 @@ Podio::setup($client_id, $client_secret);
 Podio::authenticate_with_app($app_id, $app_token);
 $items = PodioItem::filter($app_id);
 
-$field_id = 'app-reference';
-$collection = $items->fields[$field_id]->values;
+foreach ($items as $item) {
+  $field_id = 'text';
 
-foreach ($collection as $referenced_item) {
-  print "Referenced item: ".$referenced_item->title;
+  print $item->fields[$field_id]->values;
 }
-
-//foreach ($items as $item) {
-//  $field_id = 'app-reference';
-//  $collection = $item->fields[$field_id]->values;
-//
-//  foreach ($collection as $referenced_item) {
-//    print "Referenced item: ".$referenced_item->title;
-//  }
-//}
 
 //$item = new PodioItem();
 //$item->fields['app-reference']->values = array('user' => 250138701);
