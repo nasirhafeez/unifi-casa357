@@ -15,7 +15,7 @@ foreach ($items as $item) {
   print_r($item->properties());
 
 // See relationships to other types of objects
-  print_r($item->relationships());
+//  print_r($item->relationships());
 }
 
 //$item = new PodioItem();
