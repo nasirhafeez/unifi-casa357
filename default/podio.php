@@ -15,10 +15,12 @@ foreach ($items as $item) {
   foreach ($item->fields as $field) {
     // You can now work on each individual field object:
     print "This field has the external_id: ".$field->external_id;
+    echo "<br>";
 
     $collection = $field->values;
     foreach ($collection as $referenced_item) {
       print "Referenced item: ".$referenced_item->title;
+      echo "<br>";
     }
   }
 }
