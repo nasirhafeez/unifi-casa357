@@ -9,32 +9,43 @@ $app_token = $_SERVER['APP_TOKEN'];
 
 Podio::setup($client_id, $client_secret);
 Podio::authenticate_with_app($app_id, $app_token);
-$items = PodioItem::filter($app_id);
+//$items = PodioItem::filter($app_id);
+//
+//foreach ($items as $item) {
+//  foreach ($item->fields as $field) {
+//    print "This field has the external_id: ".$field->external_id;
+//    echo "<br>";
+//    $collection = $field->values;
+//    echo gettype($collection) . "<br>";
+//    if (gettype($collection) == "object")
+//    foreach ($collection as $referenced_item) {
+//      print "Referenced item: ".$referenced_item->title;
+//      echo "<br>";
+//    } elseif (gettype($collection) == "array") {
+//      print $field->humanized_value();
+//      echo "<br>";
+//    } else {
+//      print $collection . "<br>";
+//    }
+//  }
+//}
 
-foreach ($items as $item) {
-  foreach ($item->fields as $field) {
-    print "This field has the external_id: ".$field->external_id;
-    echo "<br>";
+$fields = new PodioItemFieldCollection(array(
+  new PodioAppItemField(array("external_id" => "user", "values" => array(
+    'item_id' => "Nasir"
+  ))),
+  new PodioAppItemField(array("external_id" => "location", "values" => array(
+    'item_id' => "Casa357"
+  ))),
+  new PodioDateItemField(array("external_id" => "login-time", "values" => array(
+    "start" => "2023-03-19 06:29"
+  ))),
+  new PodioTextItemField(array("external_id" => "mac-address", "values" => "12:e5:10:47:b9:72"))
+));
 
-    $collection = $field->values;
-    echo gettype($collection) . "<br>";
-    if (gettype($collection) == "object")
-    foreach ($collection as $referenced_item) {
-      print "Referenced item: ".$referenced_item->title;
-      echo "<br>";
-    } elseif (gettype($collection) == "array") {
-//      print_r($collection);
-      print $field->humanized_value();
-      echo "<br>";
-    } else {
-      print $collection . "<br>";
-    }
-  }
-}
+$item = new PodioItem(array(
+  'app' => new PodioApp($app_id),
+  'fields' => $fields
+));
 
-//$item = new PodioItem();
-//$item->fields['app-reference']->values = array('user' => 250138701);
-//$item->fields['app-reference']->values = array('location' => 250138701);
-//$item->fields['date']->start = "2011-12-31 11:27:10";
-//$item->fields['text']->values = '12:e5:10:47:b9:72';
-//$item->save();
+$item->save();
