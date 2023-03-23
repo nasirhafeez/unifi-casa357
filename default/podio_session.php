@@ -42,9 +42,9 @@ $fields = new PodioItemFieldCollection(array(
   new PodioAppItemField(array("external_id" => "user", "values" => array(
     'item_id' => 2419744415
   ))),
-//  new PodioAppItemField(array("external_id" => "location", "values" => array(
-//    'item_id' => "Casa357"
-//  ))),
+  new PodioAppItemField(array("external_id" => "location", "values" => array(
+    'item_id' => "Casa357"
+  ))),
   new PodioDateItemField(array("external_id" => "login-time", "values" => array(
     "start" => "2023-03-19 06:29:00"
   ))),
