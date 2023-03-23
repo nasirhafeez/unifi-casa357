@@ -18,7 +18,7 @@ $fields = new PodioItemFieldCollection(array(
   new PodioTextItemField(array("external_id" => "family-name", "values" => "Doe")),
   new PodioTextItemField(array("external_id" => "mobile-phone-number", "values" => "123456789")),
   new PodioEmailItemField(array("external_id" => "email", "values" => array(
-    'type' => "home",
+    'type' => "work",
     'value' => "abc@xyz.com"
   )))
 ));
