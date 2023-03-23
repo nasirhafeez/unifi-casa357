@@ -28,11 +28,12 @@ foreach ($items as $item) {
     foreach ($collection as $referenced_item) {
       print "Referenced item: ".$referenced_item->title;
       echo "<br>";
+      print_r($field->values);
     } elseif (gettype($collection) == "array") {
-      print $field->humanized_value();
+//      print $field->humanized_value();
       echo "<br>";
     } else {
-      print $collection . "<br>";
+//      print $collection . "<br>";
     }
   }
 }
