@@ -16,10 +16,10 @@ Podio::setup($client_id, $client_secret);
 Podio::authenticate_with_app($app_id, $app_token);
 $items = PodioItem::filter($app_id);
 
-foreach ($items as $item) {
-  foreach ($item->fields as $field) {
-    if ($field->external_id == "location") {
-      print $field->field_id;
+//foreach ($items as $item) {
+//  foreach ($item->fields as $field) {
+//    if ($field->external_id == "location") {
+//      print $field->field_id;
 //      $collection = $field->values;
 //      echo gettype($collection) . "<br>";
 //      if (gettype($collection) == "object")
@@ -27,9 +27,9 @@ foreach ($items as $item) {
 //          print "Referenced item: ".$referenced_item->title;
 //          echo "<br>";
 //        }
-    }
-  }
-}
+//    }
+//  }
+//}
 
 $fields = new PodioItemFieldCollection(array(
   new PodioAppItemField(array("external_id" => "user", "values" => array(
@@ -44,9 +44,9 @@ $fields = new PodioItemFieldCollection(array(
   new PodioTextItemField(array("external_id" => "mac-address", "values" => "12:e5:10:47:b9:72"))
 ));
 
-//$item = new PodioItem(array(
-//  'app' => new PodioApp($app_id),
-//  'fields' => $fields
-//));
-//
-//$item->save();
+$item = new PodioItem(array(
+  'app' => new PodioApp($app_id),
+  'fields' => $fields
+));
+
+$item->save();
