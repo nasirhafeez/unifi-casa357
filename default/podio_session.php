@@ -42,7 +42,7 @@ $items = PodioItem::filter($app_id);
 
 $fields = new PodioItemFieldCollection(array(
   new PodioAppItemField(array("external_id" => "user", "values" => array(
-    'item_id' => "2416065557"
+    'item_id' => "2419744415"
   ))),
   new PodioAppItemField(array("external_id" => "location", "values" => array(
     'item_id' => "Casa357"
