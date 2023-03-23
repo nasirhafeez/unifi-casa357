@@ -11,7 +11,7 @@ $app_token = $app_token_user;
 
 Podio::setup($client_id, $client_secret);
 Podio::authenticate_with_app($app_id, $app_token);
-$items = PodioItem::filter($app_id);
+//$items = PodioItem::filter($app_id);
 
 $fields = new PodioItemFieldCollection(array(
   new PodioTextItemField(array("external_id" => "first-name", "values" => "John")),
