@@ -19,7 +19,10 @@ $fields = new PodioItemFieldCollection(array(
   new PodioEmailItemField(array("external_id" => "email", "values" => array(
     'type' => "work",
     'value' => "abc@xyz.com"
-  )))
+  ))),
+  new PodioAppItemField(array("external_id" => "relationship-3", "values" => array(
+    'item_id' => 2416065958
+  ))),
 ));
 
 $item = new PodioItem(array(
