@@ -20,14 +20,14 @@ foreach ($items as $item) {
   print $item->item_id;
   echo "<br>";
   foreach ($item->fields as $field) {
-    print "This field has the external_id: ".$field->external_id;
-    echo "<br>";
-    $collection = $field->values;
-    echo gettype($collection) . "<br>";
-    if (gettype($collection) == "object")
-    foreach ($collection as $referenced_item) {
-      print "Referenced item: ".$referenced_item->title;
-      echo "<br>";
+    if ($field->external_id == "location") {
+      $collection = $field->values;
+      echo gettype($collection) . "<br>";
+      if (gettype($collection) == "object")
+        foreach ($collection as $referenced_item) {
+          print "Referenced item: ".$referenced_item->title;
+          echo "<br>";
+        }
     }
   }
 }
