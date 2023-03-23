@@ -19,7 +19,7 @@ $items = PodioItem::filter($app_id);
 foreach ($items as $item) {
   foreach ($item->fields as $field) {
     if ($field->external_id == "location") {
-      print $field->text;
+      print gettype($field);
 //      $collection = $field->values;
 //      echo gettype($collection) . "<br>";
 //      if (gettype($collection) == "object")
