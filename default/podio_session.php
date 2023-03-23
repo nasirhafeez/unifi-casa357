@@ -17,18 +17,17 @@ Podio::authenticate_with_app($app_id, $app_token);
 $items = PodioItem::filter($app_id);
 
 foreach ($items as $item) {
-  print $item->item_id;
-  echo "<br>";
   foreach ($item->fields as $field) {
     if ($field->external_id == "location") {
-      $collection = $field->values;
-      echo gettype($collection) . "<br>";
-      if (gettype($collection) == "object")
-        foreach ($collection as $referenced_item) {
-          print "Referenced item: ".$referenced_item->title;
-          echo "<br>";
-        }
-    }
+      print $item->fields['location']->text;
+//      $collection = $field->values;
+//      echo gettype($collection) . "<br>";
+//      if (gettype($collection) == "object")
+//        foreach ($collection as $referenced_item) {
+//          print "Referenced item: ".$referenced_item->title;
+//          echo "<br>";
+//        }
+//    }
   }
 }
 
