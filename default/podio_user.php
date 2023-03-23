@@ -6,13 +6,11 @@ $client_id = $_SERVER['CLIENT_ID'];
 $client_secret = $_SERVER['CLIENT_SECRET'];
 $app_id_user = $_SERVER['APP_ID_USER'];
 $app_token_user = $_SERVER['APP_TOKEN_USER'];
-$app_id = $app_id_user;
+$app_id = (int)$app_id_user;
 $app_token = $app_token_user;
 
 Podio::setup($client_id, $client_secret);
 Podio::authenticate_with_app($app_id, $app_token);
-
-$int_app_id = (int)$app_id;
 
 $fields = new PodioItemFieldCollection(array(
   new PodioTextItemField(array("external_id" => "first-name", "values" => "John")),
@@ -25,7 +23,7 @@ $fields = new PodioItemFieldCollection(array(
 ));
 
 $item = new PodioItem(array(
-  'app' => new PodioApp($int_app_id),
+  'app' => new PodioApp($app_id),
   'fields' => $fields
 ));
 
