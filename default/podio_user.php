@@ -12,21 +12,21 @@ $app_token = $app_token_user;
 Podio::setup($client_id, $client_secret);
 Podio::authenticate_with_app($app_id, $app_token);
 
-print gettype($app_id);
+$int_app_id = (int)$app_id;
 
-//$fields = new PodioItemFieldCollection(array(
-//  new PodioTextItemField(array("external_id" => "first-name", "values" => "John")),
-//  new PodioTextItemField(array("external_id" => "family-name", "values" => "Doe")),
-//  new PodioTextItemField(array("external_id" => "mobile-phone-number", "values" => "123456789")),
-//  new PodioEmailItemField(array("external_id" => "email", "values" => array(
-//    'type' => "work",
-//    'value' => "abc@xyz.com"
-//  )))
-//));
-//
-//$item = new PodioItem(array(
-//  'app' => new PodioApp($app_id),
-//  'fields' => $fields
-//));
-//
-//$item->save();
+$fields = new PodioItemFieldCollection(array(
+  new PodioTextItemField(array("external_id" => "first-name", "values" => "John")),
+  new PodioTextItemField(array("external_id" => "family-name", "values" => "Doe")),
+  new PodioTextItemField(array("external_id" => "mobile-phone-number", "values" => "123456789")),
+  new PodioEmailItemField(array("external_id" => "email", "values" => array(
+    'type' => "work",
+    'value' => "abc@xyz.com"
+  )))
+));
+
+$item = new PodioItem(array(
+  'app' => new PodioApp($int_app_id),
+  'fields' => $fields
+));
+
+$item->save();
