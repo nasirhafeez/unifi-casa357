@@ -27,7 +27,7 @@ foreach ($items as $item) {
 //          print "Referenced item: ".$referenced_item->title;
 //          echo "<br>";
 //        }
-//    }
+    }
   }
 }
 
