@@ -9,15 +9,12 @@ $app_token_user = $_SERVER['APP_TOKEN_USER'];
 $app_id_session = $_SERVER['APP_ID_SESSION'];
 $app_token_session = $_SERVER['APP_TOKEN_SESSION'];
 
-//$app_id = $app_id_user;
-//$app_token = $app_token_user;
-
-$app_id = $app_id_session;
+$app_id = (int)$app_id_session;
 $app_token = $app_token_session;
 
 Podio::setup($client_id, $client_secret);
 Podio::authenticate_with_app($app_id, $app_token);
-$items = PodioItem::filter($app_id);
+//$items = PodioItem::filter($app_id);
 
 //foreach ($items as $item) {
 //  print $item->item_id;
@@ -42,7 +39,7 @@ $items = PodioItem::filter($app_id);
 
 $fields = new PodioItemFieldCollection(array(
   new PodioAppItemField(array("external_id" => "user", "values" => array(
-    'item_id' => "2419744415"
+    'item_id' => "2419752312"
   ))),
   new PodioAppItemField(array("external_id" => "location", "values" => array(
     'item_id' => "Casa357"
