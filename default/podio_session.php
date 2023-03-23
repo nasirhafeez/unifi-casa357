@@ -46,7 +46,7 @@ $fields = new PodioItemFieldCollection(array(
 //    'item_id' => "Casa357"
 //  ))),
   new PodioDateItemField(array("external_id" => "login-time", "values" => array(
-    "start" => "2023-03-19 06:29"
+    "start" => "2023-03-19 06:29:00"
   ))),
   new PodioTextItemField(array("external_id" => "mac-address", "values" => "12:e5:10:47:b9:72"))
 ));
