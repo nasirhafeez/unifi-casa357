@@ -17,12 +17,9 @@ Podio::authenticate_with_app($app_id, $app_token);
 $items = PodioItem::filter($app_id);
 
 foreach ($items as $item) {
-  $field_id = '250139336';
-  $collection = $item->fields[$field_id]->values;
+  $field_id = 'text';
 
-  foreach ($collection as $referenced_item) {
-    print "Referenced item: ".$referenced_item->title;
-  }
+  print $item->fields[$field_id]->values;
 }
 
 //$fields = new PodioItemFieldCollection(array(
