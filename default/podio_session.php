@@ -17,11 +17,11 @@ Podio::authenticate_with_app($app_id, $app_token);
 $items = PodioItem::filter($app_id);
 
 foreach ($items as $item) {
-  foreach ($item->fields as $field) {
-    if ($field->external_id == "location") {
-      $collection = $item->fields['app-reference']->values;
-      var_dump($collection);
-    }
+  $field_id = 'app-reference';
+  $collection = $item->fields[$field_id]->values;
+
+  foreach ($collection as $referenced_item) {
+    print "Referenced item: ".$referenced_item->title;
   }
 }
 
