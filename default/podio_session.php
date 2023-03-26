@@ -31,7 +31,7 @@ Podio::authenticate_with_app($app_id, $app_token);
 //  }
 //}
 
-$item = PodioItem::get_basic(2422645833);
+$item = PodioItem::get(2422645833);
 //$item->fields[250138701]->values = new PodioItem(array('item_id' => 2422645835));
 
 $item = new PodioItem(array('fields' =>
@@ -41,4 +41,5 @@ $item = new PodioItem(array('fields' =>
     )))
   ))
 ));
+
 $item->save();
