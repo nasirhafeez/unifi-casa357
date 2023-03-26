@@ -53,9 +53,11 @@ $fields = new PodioItemFieldCollection(array(
   ))),
 ));
 
-$item = new PodioItem(array(
+$item_2 = new PodioItem(array(
   'app' => new PodioApp($app_id_user),
   'fields' => $fields
 ));
 
-$item->save();
+$new_item_placeholder_2 = $item_2->save();
+$item_2->item_id = $new_item_placeholder_2->item_id;
+print $item_2->item_id;
