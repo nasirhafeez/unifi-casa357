@@ -17,7 +17,7 @@ Podio::authenticate_with_app($app_id, $app_token);
 $items = PodioItem::filter($app_id);
 
 foreach ($items as $item) {
-  $field_id = 'text';
+  $field_id = '250138703';
 
   print $item->fields[$field_id]->values;
 }
