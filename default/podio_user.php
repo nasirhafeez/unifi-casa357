@@ -14,6 +14,8 @@ $app_token = $app_token_user;
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
+# Create session
+
 Podio::setup($client_id, $client_secret);
 Podio::authenticate_with_app($app_id_session, $app_token_session);
 
@@ -37,6 +39,8 @@ $item->item_id = $new_item_placeholder->item_id;
 print $item->item_id;
 
 ///////////////////////////////////////////////////////////////////////////////////////////
+
+# Create user and add session reference
 
 Podio::authenticate_with_app($app_id_user, $app_token_user);
 
