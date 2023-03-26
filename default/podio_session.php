@@ -19,14 +19,8 @@ $items = PodioItem::filter($app_id);
 foreach ($items as $item) {
   foreach ($item->fields as $field) {
     if ($field->external_id == "location") {
-      print $field->field_id;
-      $collection = $field->values;
-      echo gettype($collection) . "<br>";
-      if (gettype($collection) == "object")
-        foreach ($collection as $referenced_item) {
-          print "Referenced item: ".$referenced_item->title;
-          echo "<br>";
-        }
+      $collection = $item->fields['app-reference']->values;
+      var_dump($collection);
     }
   }
 }
