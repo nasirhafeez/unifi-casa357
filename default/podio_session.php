@@ -31,21 +31,5 @@ Podio::authenticate_with_app($app_id, $app_token);
 //  }
 //}
 
-$fields = new PodioItemFieldCollection(array(
-  new PodioAppItemField(array("external_id" => "location", "values" => array(
-    'item_id' => 2412221775
-  ))),
-  new PodioDateItemField(array("external_id" => "login-time", "values" => array(
-    "start" => "2023-03-19 06:29:00"
-  ))),
-  new PodioTextItemField(array("external_id" => "mac-address", "values" => "12:e5:10:47:b9:72"))
-));
-
-$item = new PodioItem(array(
-  'app' => new PodioApp($app_id),
-  'fields' => $fields
-));
-
-$new_item_placeholder = $item->save();
-$item->item_id = $new_item_placeholder->item_id;
-print $item->item_id;
+$item = PodioItem::get_basic(2422645833);
+$item->fields[250138701]->values = new PodioItem(array('item_id' => 2422645835));
