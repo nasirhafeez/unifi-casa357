@@ -21,12 +21,12 @@ foreach ($items as $item) {
     if ($field->external_id == "location") {
       print $field->field_id;
       $collection = $field->values;
-      echo gettype($collection) . "<br>";
-      foreach ($collection as $referenced_item) {
-        print "Referenced item: ".$referenced_item->title;
-        echo "<br>";
-        var_dump(get_object_vars($referenced_item));
-      }
+      var_dump($collection);
+//      foreach ($collection as $referenced_item) {
+//        print "Referenced item: ".$referenced_item->title;
+//        echo "<br>";
+//        var_dump(get_object_vars($referenced_item));
+//      }
     }
   }
 }
