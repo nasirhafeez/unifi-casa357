@@ -41,3 +41,4 @@ $item = new PodioItem(array('fields' =>
     )))
   ))
 ));
+$item->save();
