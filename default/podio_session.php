@@ -17,7 +17,7 @@ Podio::authenticate_with_app($app_id, $app_token);
 $items = PodioItem::filter($app_id);
 
 foreach ($items as $item) {
-  $field_id = 'app-reference';
+  $field_id = '	250139336';
   $collection = $item->fields[$field_id]->values;
 
   foreach ($collection as $referenced_item) {
