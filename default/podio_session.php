@@ -22,11 +22,11 @@ foreach ($items as $item) {
       print $field->field_id;
       $collection = $field->values;
       var_dump($collection);
-//      foreach ($collection as $referenced_item) {
-//        print "Referenced item: ".$referenced_item->title;
-//        echo "<br>";
-//        var_dump(get_object_vars($referenced_item));
-//      }
+      foreach ($collection as $referenced_item) {
+        print "Referenced item: ".$referenced_item->title;
+        echo "<br>";
+        print "Referenced item: ".$referenced_item->item_id;
+      }
     }
   }
 }
