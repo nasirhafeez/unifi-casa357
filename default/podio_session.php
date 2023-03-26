@@ -32,9 +32,6 @@ Podio::authenticate_with_app($app_id, $app_token);
 //}
 
 $fields = new PodioItemFieldCollection(array(
-  new PodioAppItemField(array("external_id" => "user", "values" => array(
-    'item_id' => 2416065557
-  ))),
   new PodioAppItemField(array("external_id" => "location", "values" => array(
     'item_id' => 2412221775
   ))),
