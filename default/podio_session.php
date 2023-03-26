@@ -38,6 +38,6 @@ $item = new PodioItem(array('fields' =>
   new PodioItemFieldCollection(array(
     new PodioAppItemField(array("external_id" => "user", "values" => array(
       'item_id' => 2422645835
-    )
+    )))
   ))
-))));
+));
