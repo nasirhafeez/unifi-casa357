@@ -49,4 +49,6 @@ $item = new PodioItem(array(
   'fields' => $fields
 ));
 
-$item->save();
+$new_item_placeholder = $item->save();
+$item->item_id = $new_item_placeholder->item_id;
+print $item->item_id;
