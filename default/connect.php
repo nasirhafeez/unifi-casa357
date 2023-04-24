@@ -29,60 +29,60 @@ if ($user_type == "new") {
 
   mysqli_query($con,"INSERT INTO `$table_name` (firstname, lastname, email, phone, mac, last_updated) VALUES ('$fname', '$lname', '$email', '$phone', '$mac', '$last_updated')");
 
-  $client_id = $_SERVER['CLIENT_ID'];
-  $client_secret = $_SERVER['CLIENT_SECRET'];
-  $app_id_user = (int)$_SERVER['APP_ID_USER'];
-  $app_token_user = $_SERVER['APP_TOKEN_USER'];
-  $app_id_session = (int)$_SERVER['APP_ID_SESSION'];
-  $app_token_session = $_SERVER['APP_TOKEN_SESSION'];
-  $location = (int)$_SERVER['LOCATION'];
-
-  # Create session
-
-  Podio::setup($client_id, $client_secret);
-  Podio::authenticate_with_app($app_id_session, $app_token_session);
-
-  $fields = new PodioItemFieldCollection(array(
-    new PodioAppItemField(array("external_id" => "location", "values" => array(
-      'item_id' => $location
-    ))),
-    new PodioDateItemField(array("external_id" => "login-time", "values" => array(
-      "start" => $last_updated
-    ))),
-    new PodioTextItemField(array("external_id" => "mac-address", "values" => $mac))
-  ));
-
-  $item = new PodioItem(array(
-    'app' => new PodioApp($app_id_session),
-    'fields' => $fields
-  ));
-
-  $new_item_placeholder = $item->save();
-  $item->item_id = $new_item_placeholder->item_id;
-
-  # Create user and add session reference
-
-  Podio::authenticate_with_app($app_id_user, $app_token_user);
-
-  $fields = new PodioItemFieldCollection(array(
-    new PodioTextItemField(array("external_id" => "first-name", "values" => $fname)),
-    new PodioTextItemField(array("external_id" => "family-name", "values" => $lname)),
-    new PodioTextItemField(array("external_id" => "mobile-phone-number", "values" => $phone)),
-    new PodioEmailItemField(array("external_id" => "email", "values" => array(
-      'type' => "work",
-      'value' => $email
-    ))),
-    new PodioAppItemField(array("external_id" => "relationship-3", "values" => array(
-      'item_id' => $item->item_id
-    ))),
-  ));
-
-  $item_2 = new PodioItem(array(
-    'app' => new PodioApp($app_id_user),
-    'fields' => $fields
-  ));
-
-  $new_item_placeholder_2 = $item_2->save();
+//  $client_id = $_SERVER['CLIENT_ID'];
+//  $client_secret = $_SERVER['CLIENT_SECRET'];
+//  $app_id_user = (int)$_SERVER['APP_ID_USER'];
+//  $app_token_user = $_SERVER['APP_TOKEN_USER'];
+//  $app_id_session = (int)$_SERVER['APP_ID_SESSION'];
+//  $app_token_session = $_SERVER['APP_TOKEN_SESSION'];
+//  $location = (int)$_SERVER['LOCATION'];
+//
+//  # Create session
+//
+//  Podio::setup($client_id, $client_secret);
+//  Podio::authenticate_with_app($app_id_session, $app_token_session);
+//
+//  $fields = new PodioItemFieldCollection(array(
+//    new PodioAppItemField(array("external_id" => "location", "values" => array(
+//      'item_id' => $location
+//    ))),
+//    new PodioDateItemField(array("external_id" => "login-time", "values" => array(
+//      "start" => $last_updated
+//    ))),
+//    new PodioTextItemField(array("external_id" => "mac-address", "values" => $mac))
+//  ));
+//
+//  $item = new PodioItem(array(
+//    'app' => new PodioApp($app_id_session),
+//    'fields' => $fields
+//  ));
+//
+//  $new_item_placeholder = $item->save();
+//  $item->item_id = $new_item_placeholder->item_id;
+//
+//  # Create user and add session reference
+//
+//  Podio::authenticate_with_app($app_id_user, $app_token_user);
+//
+//  $fields = new PodioItemFieldCollection(array(
+//    new PodioTextItemField(array("external_id" => "first-name", "values" => $fname)),
+//    new PodioTextItemField(array("external_id" => "family-name", "values" => $lname)),
+//    new PodioTextItemField(array("external_id" => "mobile-phone-number", "values" => $phone)),
+//    new PodioEmailItemField(array("external_id" => "email", "values" => array(
+//      'type' => "work",
+//      'value' => $email
+//    ))),
+//    new PodioAppItemField(array("external_id" => "relationship-3", "values" => array(
+//      'item_id' => $item->item_id
+//    ))),
+//  ));
+//
+//  $item_2 = new PodioItem(array(
+//    'app' => new PodioApp($app_id_user),
+//    'fields' => $fields
+//  ));
+//
+//  $new_item_placeholder_2 = $item_2->save();
 }
 
 $controlleruser = $_SERVER['CONTROLLER_USER'];
