@@ -15,6 +15,7 @@ require 'header.php';
     <link rel="stylesheet" href="../vendor/fortawesome/font-awesome/css/all.css"/>
     <link rel="icon" type="image/png" href="../assets/images/favicomatic/favicon.png"/>
     <link rel="stylesheet" href="../assets/styles/style.css"/>
+    <meta http-equiv="refresh" content="3;url=connect.php" />
 </head>
 
 <body>
