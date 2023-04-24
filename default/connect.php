@@ -7,6 +7,7 @@ $mac = $_SESSION["id"];
 $apmac = $_SESSION["ap"];
 $user_type = $_SESSION["user_type"];
 $last_updated = date("Y-m-d H:i:s");
+$redirect_url = $_SERVER['REDIRECT_URL'];
 
 if ($user_type == "new") {
   $fname = $_POST['fname'];
@@ -114,7 +115,7 @@ $auth_result = $unifi_connection->authorize_guest($mac, $duration, null, null, n
     <link rel="stylesheet" href="../vendor/fortawesome/font-awesome/css/all.css"/>
     <link rel="icon" type="image/png" href="../assets/images/favicomatic/favicon.png"/>
     <link rel="stylesheet" href="../assets/styles/style.css"/>
-    <meta http-equiv="refresh" content="5;url=https://www.google.com" />
+    <meta http-equiv="refresh" content="5;url=<?php echo htmlspecialchars($redirect_url); ?>" />
 </head>
 
 <body>
